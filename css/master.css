@@ -1,0 +1,344 @@
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    height: 100%;
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+@font-face {
+    font-family: "Another America";
+    src: url('../fonts/anotheramerica.ttf');
+}
+
+body {
+    background-color: #110c19;
+    color: #FFF;
+    font-family: Montserrat;
+    height: 100%;
+    position: relative;
+    margin: 0;
+    padding-bottom: 6rem; 
+}
+
+#container, #containerContact, #containerAbout, #containerProducts, #containerMayhem {
+    width: 80%; 
+    margin: 0 auto;
+}
+
+p {
+    font-size: 16px;
+    line-height: 18px;
+}
+
+
+/* Navigation Bar */ 
+
+.logo {
+    padding: 5px 0 0 10px;
+    float: left;
+}
+
+.active {
+    color: #d33d84;
+}
+
+nav * {
+    box-sizing: border-box;
+    transition: all .35s ease;
+    height: 70px;
+}
+nav ul {
+    display: flex; 
+    justify-content: flex-end;
+}
+
+nav li {
+    display: inline-block;
+    list-style: outside none none;
+    margin: .5em 1em;
+    padding: 0;
+    
+}
+
+nav a {
+    padding: .5em .8em;
+    color: #FFF;
+    position: relative;
+    text-decoration: none;
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.nav a::before,
+.nav a::after {
+    content: '';
+    height: 14px;
+    width: 14px;
+    position: absolute;
+    transition: all .35s ease;
+    opacity: 0;
+}
+
+.nav a::before {
+    content: '';
+    right: 0;
+    top: 0;
+    border-top: 3px solid #d33d84;
+    border-right: 3px solid #970E4F;
+    transform: translate(-100%, 50%);
+}
+
+.nav a:after {
+    content: '';
+    left: 0;
+    bottom: 0;
+    border-bottom: 3px solid #970E4F;
+    border-left: 3px solid #d33d84;
+    transform: translate(100%, -50%)
+}
+
+.nav a:hover:before,
+.nav a:hover:after{
+    transform: translate(0,0);
+    opacity: 1;
+}
+
+.nav a:hover {
+    color: #d33d84;
+}
+nav .right {
+    float: right;
+    margin: 18px 10px;
+}
+
+h1 {
+    font-family: "Another America";
+}
+
+
+/* Footer */
+
+footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    padding-bottom: 0;
+}
+
+footer ul { 
+    margin: 0;
+    padding: 0;  
+}
+footer li {
+    float: left;
+}
+footer li a {
+    display: block;
+    color: #FFF;
+    text-align: center;
+    padding: 10px 10px 10px 0;
+}
+footer .center {
+    text-align: center;
+    font-size: 12px;
+    align-self: flex-end;
+}
+.block {
+    display: inline;    
+}
+.footerFlex {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Homepage */
+
+#container {
+    padding: 10% 20px;
+    display: flex;
+    justify-content: space-around;
+}
+h1 {
+    font-size: 140px;
+    margin-bottom: 30px;
+}
+#container img {
+    transform: rotate(-10deg);
+    padding: 30px;
+    width: 443px;
+    height: 312px;
+}
+.text {
+    display: inline-block;
+}
+button {
+    padding: 20px;
+    margin: 20px 40px 20px 33%;
+    background-color: #d33d84;
+    color: #FFF;
+    border-radius: 20px;
+    font-size: 25px; 
+    border: none;     
+}
+button:hover {
+    background: #970E4F;
+}
+
+/* About */
+
+#containerAbout {
+    padding: 40px;
+    display: flex;
+    justify-content: space-around;
+    
+}
+#containerAbout img {
+    width: 35%;
+}
+.description {
+    width: 40%;    
+}
+#containerAbout h1, #containerAbout p {
+    padding: 20px 10px;
+    text-align: justify;
+}
+#containerAbout h1 {
+    font-size: 110px;
+}
+
+/* Contact */
+
+#containerContact {
+    padding: 20px 10px; 
+    margin: 0 auto;
+}
+#map {
+    width: 450px;
+    height: 350px;
+    float: left;
+}
+h3, #containerContact p {
+    font-size: 19px;
+    padding: 10px 0;
+}
+
+#containerContact .right {
+    display:inline-block;
+    width: 500px;
+    height: 350px;
+    padding:  20px 60px;
+}
+#containerContact .smaller {
+    font-size: 16px;
+    line-height: 19px;
+    padding: 5px 0;
+}
+#containerContact .down {
+    padding-top: 20px;
+}
+.border {
+    text-decoration: underline;
+}
+.bold {
+    font-weight: 600;
+}
+
+
+/* Products */
+
+.back {
+    display: inline-block;
+    width: 250px;
+    height: 250px;
+    margin: 10px;
+    border: 10px solid #eae7ef;
+    background-color: #eae7ef;
+    padding: 5px;
+}
+#containerProducts {
+    padding: 40px 0;
+}
+#containerProducts img {
+    width: 70%;
+    display: block;
+    margin: auto;
+}
+#containerProducts p {
+    padding: 3px;
+    color: #110c19;
+    text-align: center;
+    font-weight: 600;
+}
+#containerProducts .pink {
+    color: #d33d84;
+}
+#containerProducts i {
+    color: #E77236; 
+}
+#wrap {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.bathBombs { 
+    font-size: 14px;
+    padding: 5px;
+    float: right;
+    margin: 30px 20px;
+    text-decoration: underline;
+    color: #FFF;
+}
+
+
+/* Project Mayhem */
+
+.mayhem {
+    background-image: url("../images/mayhemcopy.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #000;
+    background-position: right;
+}
+#containerMayhem {
+    padding: 20px 0;
+}
+#containerMayhem h1 {
+    text-align: center;
+    padding: 40px;
+    font-size: 110px;
+}
+h4 {
+    text-transform: uppercase;
+    font-size: 18px;
+    padding: 5px 5px 10px 7px;
+    font-weight: 600;
+}
+.column {
+    -webkit-column-count: 3; /* Chrome, Safari, Opera */
+    -moz-column-count: 3; /* Firefox */
+    column-count: 3;
+    padding: 30px;
+    margin: 50px;
+}
+#containerMayhem p {
+    padding: 7px;   
+}
+.burn {
+    padding: 20px;
+    text-align: right;
+    font-weight: 600;
+}
+
+audio {
+    display: block;
+}
+.flex {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
