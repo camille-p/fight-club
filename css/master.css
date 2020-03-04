@@ -19,7 +19,8 @@ body {
     height: 100%;
     position: relative;
     margin: 0;
-    padding-bottom: 6rem; 
+    display: flex;
+    flex-direction: column;
 }
 
 #container, #containerContact, #containerAbout, #containerProducts, #containerMayhem {
@@ -123,13 +124,9 @@ h1 {
 /* Footer */
 
 footer {
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    padding: 1rem;
-    padding-bottom: 0;
+    padding: 0 20px 0 20px;
     justify-content: space-between;
+    flex-shrink: 0;
 }
 
 footer ul { 
@@ -158,6 +155,7 @@ footer .center {
 
 #container {
     padding: 10% 20px;
+    flex: 1 0 auto;
 }
 #container main {
     justify-content: space-evenly;
@@ -192,6 +190,7 @@ button:hover {
 
 #containerAbout {
     padding: 40px;
+    flex: 1 0 auto;
 }
 #containerAbout main{
     justify-content: space-around;
@@ -214,6 +213,7 @@ button:hover {
 
 #containerContact {
     padding: 20px 10px; 
+    flex: 1 0 auto;
 }
 #map {
     width: 475px;
@@ -242,7 +242,7 @@ justify-content: space-around;
 }
 .stores {
     display: inline-block;
-    margin: 25px 0 0 95px;
+    margin: 25px 0 25px 75px;
 }
 
 #containerContact .smaller {
@@ -272,6 +272,7 @@ justify-content: space-around;
 }
 #containerProducts {
     padding: 40px 0;
+    flex: 1 0 auto;
 }
 #containerProducts img {
     width: 70%;
@@ -293,6 +294,7 @@ justify-content: space-around;
 #containerProducts main {
     flex-wrap: wrap;
     justify-content: center;
+    
 }
 .bathBombs { 
     font-size: 14px;
