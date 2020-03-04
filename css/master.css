@@ -26,6 +26,9 @@ body {
     width: 80%; 
     margin: 0 auto;
 }
+.flex {
+    display: flex;
+}
 
 p {
     font-size: 16px;
@@ -50,7 +53,6 @@ nav * {
     height: 70px;
 }
 nav ul {
-    display: flex; 
     justify-content: flex-end;
 }
 
@@ -127,6 +129,7 @@ footer {
     left: 0;
     padding: 1rem;
     padding-bottom: 0;
+    justify-content: space-between;
 }
 
 footer ul { 
@@ -150,17 +153,14 @@ footer .center {
 .block {
     display: inline;    
 }
-.footerFlex {
-    display: flex;
-    justify-content: space-between;
-}
 
 /* Homepage */
 
 #container {
     padding: 10% 20px;
-    display: flex;
-    justify-content: space-around;
+}
+#container main {
+    justify-content: space-evenly;
 }
 h1 {
     font-size: 140px;
@@ -192,9 +192,9 @@ button:hover {
 
 #containerAbout {
     padding: 40px;
-    display: flex;
+}
+#containerAbout main{
     justify-content: space-around;
-    
 }
 #containerAbout img {
     width: 35%;
@@ -214,24 +214,37 @@ button:hover {
 
 #containerContact {
     padding: 20px 10px; 
-    margin: 0 auto;
 }
 #map {
-    width: 450px;
-    height: 350px;
-    float: left;
+    width: 475px;
+    height: 375px;
 }
-h3, #containerContact p {
-    font-size: 19px;
+
+#containerContact h3{
+    font-size: 20px;
+    padding: 20px 0;
+    font-weight: 600;
+} 
+
+#containerContact p {
+    font-size: 18px;
     padding: 10px 0;
+}
+.mapAddress {
+justify-content: space-around;
 }
 
 #containerContact .right {
-    display:inline-block;
-    width: 500px;
+    width: 350px;
     height: 350px;
-    padding:  20px 60px;
+    padding-top: 70px;
+    
 }
+.stores {
+    display: inline-block;
+    margin: 25px 0 0 95px;
+}
+
 #containerContact .smaller {
     font-size: 16px;
     line-height: 19px;
@@ -240,9 +253,7 @@ h3, #containerContact p {
 #containerContact .down {
     padding-top: 20px;
 }
-.border {
-    text-decoration: underline;
-}
+
 .bold {
     font-weight: 600;
 }
@@ -279,8 +290,7 @@ h3, #containerContact p {
 #containerProducts i {
     color: #E77236; 
 }
-#wrap {
-    display: flex;
+#containerProducts main {
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -336,8 +346,7 @@ h4 {
 audio {
     display: block;
 }
-.flex {
-    display: flex;
+.flexAudio {
     width: 100%;
     justify-content: space-between;
 }
