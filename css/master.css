@@ -47,7 +47,12 @@ p {
 .active {
     color: #d33d84;
 }
-
+.toggle {
+    display: none;
+}
+.item {
+    display: block;
+}
 nav * {
     box-sizing: border-box;
     transition: all .35s ease;
@@ -111,7 +116,7 @@ nav a {
 .nav a:hover {
     color: #d33d84;
 }
-nav .right {
+.right {
     float: right;
     margin: 18px 10px;
 }
@@ -120,6 +125,72 @@ h1 {
     font-family: "Another America";
 }
 
+/* Tablet Nav */
+@media all and (max-width: 768px) {
+    nav a {
+        font-size: 18px;
+    }
+    nav li {
+        padding-top: 10px;
+    }
+    .right {
+        padding-top: 18px; 
+    }
+}
+
+/* Mobile Nav */
+@media all and (max-width: 420px) {
+    .toggle {
+        display: block;
+        float: left;
+        margin: 18px 10px;
+    }
+    .item {
+        display: none;
+    }
+    .item.active-nav {
+        display: block;
+    }
+    .toggle, .right {
+        font-size: 22px;
+    }
+    .logo {
+        padding: 5px;
+        float: none;
+    }
+   
+    .right {
+        padding-top: 10px; 
+    }
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;  
+        z-index: 1;
+        background-color: #110c19;
+        opacity: 0.95;
+        height: 30px;
+        text-align: center;
+
+    } 
+    nav a {
+        font-size: 16px;
+    }    
+    nav ul {
+        flex-wrap: wrap;
+        width: 100%;
+        text-align: left;
+    }
+    
+    nav li {
+        flex-basis: 100%;
+        background-color: #110c19;
+        opacity: 0.95;
+        margin: 0;
+        padding-left: 10px;
+    }
+}
 
 /* Footer */
 
@@ -149,6 +220,26 @@ footer .center {
 }
 .block {
     display: inline;    
+}
+
+/* Mobile Footer */
+@media all and (max-width: 420px) {
+    footer {
+        flex-direction: column;
+        justify-content: center;
+    }
+    footer li a {
+       font-size: 24px;
+       padding: 22px;
+    }
+    footer p {
+        padding-top: 22px;
+    }
+    .center {
+        order: 3;
+        padding-top: 10px;
+        margin: auto;
+    }
 }
 
 /* Homepage */
@@ -184,6 +275,28 @@ button {
 }
 button:hover {
     background: #970E4F;
+}
+
+@media all and (max-width: 600px) {
+    #container {
+        padding: 20px;
+        margin-top: 90px;
+    }
+    h1 {
+        font-size: 50px;
+    }
+    #container img {
+        width: 200px;
+        height: 150px;
+    }
+    button {
+        padding: 7px 15px;
+        font-size: 18px;
+        border-radius: 10px;
+    }
+    .text {
+        display: block;
+    }
 }
 
 /* About */
