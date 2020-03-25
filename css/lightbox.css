@@ -37,7 +37,7 @@ body.lb-disable-scrolling {
   border-radius: 3px;
 
   /* Image border */
-  border: 4px solid #eae7ef;
+  border: 4px solid #fff;
 }
 
 .lightbox a img {
@@ -54,7 +54,7 @@ body.lb-disable-scrolling {
 
   /* Background color behind image.
      This is visible during transitions. */
-  background-color: #eae7ef;
+  background-color: #fff;
 }
 
 .lb-outerContainer:after {

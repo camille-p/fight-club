@@ -140,11 +140,12 @@ h1 {
 }
 
 /* Mobile Nav */
-@media all and (max-width: 420px) {
+@media all and (max-width: 750px) {
     .toggle {
         display: block;
         float: left;
         margin: 18px 10px;
+        margin-right: 0;
     }
     .item {
         display: none;
@@ -163,6 +164,7 @@ h1 {
     }
     .right {
         padding-top: 10px; 
+        margin-left: 0;
     }
     nav, .mayhem nav {
         position: fixed;
@@ -193,7 +195,9 @@ h1 {
         margin: 0;
         padding-left: 10px;
     }
-    
+    #container, #containerContact, #containerAbout, #containerProducts, #containerMayhem {
+        margin-top: 95px;
+    }
 }
 
 /* Footer */
@@ -406,9 +410,7 @@ button:hover {
         width: 100%;  
         margin: auto;
     }
-    #containerAbout main {
-        margin-top: 95px;
-    }
+    
     #containerAbout h1 {
         font-size: 60px;
         padding-bottom: 20px;
@@ -422,39 +424,31 @@ button:hover {
 
 /* Contact */
 
-#containerContact {
-    padding: 20px 10px; 
-}
 #map {
     width: 475px;
     height: 375px;
 }
-
+.mapAddress {
+    flex-wrap: wrap;
+}
 #containerContact h3{
     font-size: 20px;
     padding: 20px 0;
     font-weight: 600;
 } 
-
 #containerContact p {
     font-size: 18px;
     padding: 10px 0;
 }
-.mapAddress {
-justify-content: space-between;
-width: 80%;
-}
-
 #containerContact .address-right {
-    width: 350px;
-    height: 350px;
-    padding-top: 70px;
+    padding-top: 40px;
+    margin-left: 20px;
+    width: 45%
 }
 .stores {
-    display: inline-block;
-    justify-content: space-evenly;
+    width: 45%;
+    margin-bottom: 20px;
 }
-
 #containerContact .smaller {
     font-size: 16px;
     line-height: 19px;
@@ -463,36 +457,40 @@ width: 80%;
 #containerContact .down {
     padding-top: 20px;
 }
-
 .bold {
     font-weight: 600;
 }
 
-/* Tablet Contact */
-@media all and (max-width: 1024px) {
-    .mapAddress {
-        width: 100%;
-        }
+@media all and (max-width: 1130px) {
     #containerContact .address-right {
-        padding-top: 45px;
-        padding-left: 20px;
+        width: 35%
     }
 }
-@media all and (max-width: 768px) {
+/* Tablet Contact */
+
+@media all and (max-width: 1000px) {
     .mapAddress {
         flex-wrap: wrap;
         width: 80%;
+        margin: auto;
     }
     #containerContact .address-right {
-        padding-top: 20px;
-        padding-left: 0;
+        width: 100%;
+        padding-top: 10px;
+        margin-left: 0;
+    }
+    .stores {
+        width: 100%;
+    }
+    #containerContact p {
+        padding: 5px 0 0 0;
+    }
+    #containerContact h3 {
+        padding-bottom: 10px;
     }
 }
 /* Mobile Contact */
 @media all and (max-width: 420px) {
-    #containerContact {
-        margin-top: 95px;
-    }
     #map {
         width: 275px;
         height: 275px;
@@ -510,22 +508,31 @@ width: 80%;
     }
     .stores {
         padding-top: 20px;
+        order: 3;
     }
 }
 
 /* Products */
-
+.nav-products {
+    height: 80px;
+}
+.footer-products {
+    margin-top: 20px;
+}
 .back {
     display: inline-block;
     width: 250px;
     height: 250px;
     margin: 10px;
-    border: 10px solid #eae7ef;
-    background-color: #eae7ef;
+    border: 10px solid #fff;
+    background-color: #fff;
     padding: 5px;
+    margin: auto;
 }
 #containerProducts {
     padding: 40px 0;
+    background-color: #fff;
+    width: 100%;
 }
 #containerProducts img {
     width: 70%;
@@ -545,27 +552,35 @@ width: 80%;
     color: #E77236; 
 }
 #containerProducts main {
+    width: 80%;
     flex-wrap: wrap;
-    justify-content: center;
-    
+    margin: auto;
 }
+
 .bathBombs { 
     font-size: 14px;
     padding: 5px;
     float: right;
     margin: 30px 20px;
     text-decoration: underline;
-    color: #FFF;
+    color: #110c19;
 }
-
+/* Tablet Products */
+@media all and (max-width: 768px) {
+    .back {
+        border: none;
+    }
+}
 /* Mobile Products */
 @media all and (max-width: 420px) {
     #containerProducts {
-        padding-top: 95px;
         padding-bottom: 20px;
     }
     .bathBombs { 
         font-size: 16px;
+    }
+    .nav-products {
+        height: 90px;
     }
 }
 /* Project Mayhem */
@@ -638,7 +653,6 @@ audio {
         font-size: 70px;
     }
     #containerMayhem {
-        padding-top: 95px;
         width: 100%;
     }
     
