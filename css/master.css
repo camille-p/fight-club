@@ -26,6 +26,7 @@ body {
 #container, #containerContact, #containerAbout, #containerProducts, #containerMayhem {
     width: 80%; 
     margin: 0 auto;
+    flex: 1 0 auto;
 }
 .flex {
     display: flex;
@@ -153,43 +154,46 @@ h1 {
     }
     .toggle, .right {
         font-size: 22px;
+        margin-bottom: 0;
+        padding-bottom: 0;
     }
     .logo {
         padding: 5px;
         float: none;
     }
-   
     .right {
         padding-top: 10px; 
     }
-    nav {
+    nav, .mayhem nav {
         position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;  
+        width: 100%; 
+        height: 90px; 
         z-index: 1;
-        background-color: #110c19;
-        opacity: 0.95;
-        height: 30px;
         text-align: center;
-
+        opacity: 0.98;
     } 
+    nav, nav li {
+        background: #110c19;
+    }
+    .mayhem nav, .mayhem nav li {
+        background: #000;
+    }
     nav a {
         font-size: 16px;
     }    
-    nav ul {
+    nav ul, .mayhem nav ul {
         flex-wrap: wrap;
         width: 100%;
         text-align: left;
     }
     
-    nav li {
+    nav li, .mayhem nav li {
         flex-basis: 100%;
-        background-color: #110c19;
-        opacity: 0.95;
+        opacity: 0.98;
         margin: 0;
         padding-left: 10px;
     }
+    
 }
 
 /* Footer */
@@ -229,8 +233,8 @@ footer .center {
         justify-content: center;
     }
     footer li a {
-       font-size: 24px;
-       padding: 22px;
+        font-size: 24px;
+        padding: 22px;
     }
     footer p {
         padding-top: 22px;
@@ -245,57 +249,92 @@ footer .center {
 /* Homepage */
 
 #container {
-    padding: 10% 20px;
-    flex: 1 0 auto;
+    padding: 75px 20px;
 }
 #container main {
     justify-content: space-evenly;
 }
-h1 {
+#container h1 {
     font-size: 140px;
     margin-bottom: 30px;
 }
 #container img {
     transform: rotate(-10deg);
     padding: 30px;
-    width: 443px;
-    height: 312px;
-}
-.text {
-    display: inline-block;
+    width: 100%;
+    max-width: 445px;
+    height: 100%;
 }
 button {
     padding: 20px;
-    margin: 20px 40px 20px 33%;
+    margin: 50px 40px 20px 33%;
     background-color: #d33d84;
     color: #FFF;
     border-radius: 20px;
-    font-size: 25px; 
-    border: none;     
+    font-size: 22px; 
+    border: none;  
+    font-family: Montserrat;  
+    text-transform: uppercase; 
 }
 button:hover {
     background: #970E4F;
 }
-
-@media all and (max-width: 600px) {
+/* Tablet Homepage */
+@media all and (max-width: 1024px) {
+    #container h1 {
+        font-size: 100px;
+    }
+    
+    #container img {
+        max-width: 345px;
+    }
+}
+@media all and (max-width: 768px) {
     #container {
         padding: 20px;
         margin-top: 90px;
+        margin-bottom: 0;
     }
-    h1 {
-        font-size: 50px;
+    #container h1 {
+        font-size: 90px;
     }
     #container img {
-        width: 200px;
-        height: 150px;
+        max-width: 300px;
+        padding-right: 0;
     }
     button {
-        padding: 7px 15px;
-        font-size: 18px;
+        padding: 15px;
         border-radius: 10px;
+        margin-top: 70px;
+        margin-right: 0;
+        float: right;
+    }
+    
+}
+@media all and (max-width: 420px) {
+    #container main {
+        flex-direction: column;
+    }
+    #container h1 {
+        font-size: 70px;
+        text-align: center;
+    }
+    #container img {
+        max-width: 200px;
+        order: 1;
+        padding: 0;
+        margin: auto;
+        margin-bottom: 30px;
+    }
+    button {
+        padding: 10px;
+        border-radius: 5px;
+        margin-top: 10px;
+        font-size: 16px;
+        float:none;
     }
     .text {
-        display: block;
+        order: 2;
     }
 }
 
@@ -303,16 +342,17 @@ button:hover {
 
 #containerAbout {
     padding: 40px;
-    flex: 1 0 auto;
 }
-#containerAbout main{
+#containerAbout main {
     justify-content: space-around;
 }
 #containerAbout img {
-    width: 35%;
+    width: 100%;
+    max-width: 350px;
+    height: 100%;
 }
 .description {
-    width: 40%;    
+    margin-left: 100px; 
 }
 #containerAbout h1, #containerAbout p {
     padding: 20px 10px;
@@ -322,11 +362,68 @@ button:hover {
     font-size: 110px;
 }
 
+/* Tablet About */
+@media all and (max-width: 1024px) {
+    .description {
+        margin-left: 60px; 
+    }
+    #containerAbout h1 {
+        font-size: 80px;
+    }
+}
+@media all and (max-width: 768px) {
+    #containerAbout {
+        padding: 0;
+    }
+    #containerAbout main {
+        flex-direction: column;
+    }
+    #containerAbout img {
+        max-width: 275px;
+        order: 2;
+        margin: auto;
+        margin-top: 40px;
+    }
+    .description {
+        width: 80%;  
+        order: 1;
+        margin: auto;
+    }
+    #containerAbout h1 {
+        font-size: 90px;
+        text-align: center;
+    }
+    #containerAbout p {
+        width: 100%;
+        font-size: 18px;
+        padding: 10px;
+    }
+}
+
+/* Mobile About */
+@media all and (max-width: 420px) {
+    .description {
+        width: 100%;  
+        margin: auto;
+    }
+    #containerAbout main {
+        margin-top: 95px;
+    }
+    #containerAbout h1 {
+        font-size: 60px;
+        padding-bottom: 20px;
+        padding-top: 0;
+    }
+    #containerAbout p {
+        font-size: 16px;
+        text-align: left;
+    }
+}
+
 /* Contact */
 
 #containerContact {
     padding: 20px 10px; 
-    flex: 1 0 auto;
 }
 #map {
     width: 475px;
@@ -344,18 +441,18 @@ button:hover {
     padding: 10px 0;
 }
 .mapAddress {
-justify-content: space-around;
+justify-content: space-between;
+width: 80%;
 }
 
-#containerContact .right {
+#containerContact .address-right {
     width: 350px;
     height: 350px;
     padding-top: 70px;
-    
 }
 .stores {
     display: inline-block;
-    margin: 25px 0 25px 75px;
+    justify-content: space-evenly;
 }
 
 #containerContact .smaller {
@@ -371,6 +468,50 @@ justify-content: space-around;
     font-weight: 600;
 }
 
+/* Tablet Contact */
+@media all and (max-width: 1024px) {
+    .mapAddress {
+        width: 100%;
+        }
+    #containerContact .address-right {
+        padding-top: 45px;
+        padding-left: 20px;
+    }
+}
+@media all and (max-width: 768px) {
+    .mapAddress {
+        flex-wrap: wrap;
+        width: 80%;
+    }
+    #containerContact .address-right {
+        padding-top: 20px;
+        padding-left: 0;
+    }
+}
+/* Mobile Contact */
+@media all and (max-width: 420px) {
+    #containerContact {
+        margin-top: 95px;
+    }
+    #map {
+        width: 275px;
+        height: 275px;
+    }
+    .mapAddress {
+        width: 100%;
+    }
+    #containerContact .address-right {
+        order: 1;
+        padding-top: 0;
+    }
+    .maps {
+        order: 2;
+        padding-top: 20px;
+    }
+    .stores {
+        padding-top: 20px;
+    }
+}
 
 /* Products */
 
@@ -385,7 +526,6 @@ justify-content: space-around;
 }
 #containerProducts {
     padding: 40px 0;
-    flex: 1 0 auto;
 }
 #containerProducts img {
     width: 70%;
@@ -418,7 +558,16 @@ justify-content: space-around;
     color: #FFF;
 }
 
-
+/* Mobile Products */
+@media all and (max-width: 420px) {
+    #containerProducts {
+        padding-top: 95px;
+        padding-bottom: 20px;
+    }
+    .bathBombs { 
+        font-size: 16px;
+    }
+}
 /* Project Mayhem */
 
 .mayhem {
@@ -426,7 +575,8 @@ justify-content: space-around;
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #000;
-    background-position: right;
+    background-position: right bottom;
+    background-attachment: fixed;
 }
 #containerMayhem {
     padding: 20px 0;
@@ -442,10 +592,15 @@ h4 {
     padding: 5px 5px 10px 7px;
     font-weight: 600;
 }
+
+
 .column {
-    -webkit-column-count: 3; /* Chrome, Safari, Opera */
-    -moz-column-count: 3; /* Firefox */
-    column-count: 3;
+    display: table;
+    width: 100%;
+    margin: auto;
+}
+.col {
+    display: table-cell;
     padding: 30px;
     margin: 50px;
 }
@@ -461,8 +616,44 @@ h4 {
 audio {
     display: block;
 }
+
 .flexAudio {
     width: 100%;
     justify-content: space-between;
 }
-
+/* Tablet Mayhem */
+@media all and (max-width: 1024px) {
+    #containerMayhem h1 {
+        padding: 20px;
+    }
+    
+}
+/* Mobile Mayhem */
+@media all and (max-width: 420px) {
+    .mayhem {
+        background-attachment: fixed;
+        background-position: bottom;
+    }
+    #containerMayhem h1 {
+        font-size: 70px;
+    }
+    #containerMayhem {
+        padding-top: 95px;
+        width: 100%;
+    }
+    
+    .col {
+        display: block;
+        padding: 10px;
+        margin: 10px;
+    }
+    audio {
+        display: none;
+    }
+    .burn {
+        padding: 20px;
+        margin: 20px;
+        text-align: left;
+        font-weight: 600;
+    }
+}
