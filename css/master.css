@@ -564,6 +564,7 @@ button:hover {
     margin: 30px 20px;
     text-decoration: underline;
     color: #110c19;
+    font-weight: 600;
 }
 /* Tablet Products */
 @media all and (max-width: 768px) {
@@ -635,6 +636,7 @@ audio {
 .flexAudio {
     width: 100%;
     justify-content: space-between;
+    margin-top: 75px;
 }
 /* Tablet Mayhem */
 @media all and (max-width: 1024px) {
