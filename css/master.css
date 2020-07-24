@@ -645,6 +645,14 @@ audio {
     }
     
 }
+@media all and (max-width: 768px) {
+    .column {
+        margin-top: 50px;
+    }
+    .flexAudio {
+        margin-top: 100px;
+    }
+}
 /* Mobile Mayhem */
 @media all and (max-width: 420px) {
     .mayhem {
